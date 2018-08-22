@@ -24,14 +24,14 @@
 			$this->base = $b;
 		}
 
-		public function getArea2() {
+		public function getArea() {
 			return $this->base * $this->altura;
 		}
 	}
 
 	$cir = new Circulo(8);
 	echo "Hola: ".round($cir->getArea());
-	$rec = new rectangulo(2,5);
-	echo "El área del rectangulo es: ".rec->getArea();
+	$rec = new Rectangulo(2,5);
+	echo "El área del rectangulo es: ".$rec->getArea();
 
 ?>
