@@ -1,3 +1,3 @@
- <?php 
-    require 'application/mvc.php';
- ?>
+<?php 
+	require 'application/mvc.php';
+?>
