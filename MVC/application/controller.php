@@ -12,6 +12,10 @@ class Controller {
 			if($_GET['page'] == 'add') {
 				$this->add();
 			}
+			//Obtenemos el id de cada uno de los usuarios
+			if ($_GET['page'] == 'show') {
+				$this->show($_GET['id']);
+			}
 		} else {
 			$this->home();
 		}
@@ -24,6 +28,7 @@ class Controller {
 		$this->load->view('home.php', $data);
 	}
 
+	//Nuestro adicionar
 	public function add() {
 
 		if($_POST) {
@@ -33,14 +38,26 @@ class Controller {
 			$phoneNumber = $_POST['phoneNumber'];
 			$address     = $_POST['address'];
 			if ($this->model->addUser($firstName, $lastName, $email, $phoneNumber, $address)) {
-				echo "<script> alert('User was added successfully!'); window.location.replace('./'); </script>";
+				//Creamos la variable status donde nos va a mostrar el mensaje de alerta
+				$_SESSION['status'] = "success";
+				$_SESSION['message'] = "User was added successfully";
+				header('Location: ./');
+				// echo "<script> alert('User was added successfully!'); window.location.replace('./'); </script>";
 			} else {
-				echo "<script> alert('User wasn't added successfully!'); window.location.replace('./'); </script>";
+				$_SESSION['status'] = "error";
+				$_SESSION['message'] = "User wasn't added successfully";
+				header('Location: ./');
 			}
 			
 		}
 
 		$this->load->view('users/add.php');
+	}
+
+	//Aqui hacemos nuestro consultar
+	public function show($id) {
+		$data = $this->model->getUser($id);
+		$this->load->view('users/show.php', $data);
 	}
 
 }

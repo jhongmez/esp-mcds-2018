@@ -41,14 +41,22 @@ class Model extends DataBase {
 		} 
 	}
 
-	public function getInfo() {
-		return array(
-			'firstName'   => 'Jeremias',
-			'lastName'    => 'Springfield',
-			'email'       => 'jeremias@gmail.com',
-			'phoneNumber' => 3120909900
-		);
+	//Declaramos la variable id para obtener uno a uno de los usuarios
+	public function getUser($id) {
+		try {
+			$sql = "SELECT * FROM users WHERE id = :id";
+			$stm = $this->conx->prepare($sql);
+			//el bindparam nos evita codigo malicioso o sqlinjection
+			$stm->bindparam(":id", $id);
+			$stm->execute();
+			return $stm->fetchAll();
+
+		} catch (PDOException $e) {
+			echo $e->getMessage();
+		}
+
 	}
+
 
 } 
 
