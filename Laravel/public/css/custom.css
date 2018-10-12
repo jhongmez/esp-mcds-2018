@@ -1,0 +1,11 @@
+.btn-outline-top-instalara {
+	color: #00c2cb;
+	border-radius: 25px;
+	margin-left: 4px;
+	transition: all 0.5s;
+}
+
+.btn-outline-top-instalara:hover {
+	background-color: #00c2cb;
+	color: #fff;
+}
