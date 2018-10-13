@@ -1,6 +1,12 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	outline: none;
+	text-decoration: none;
+}
+
 .btn-outline-top-instalara {
 	color: #00c2cb;
-	border-radius: 25px;
 	margin-left: 4px;
 	transition: all 0.5s;
 }
@@ -8,4 +14,27 @@
 .btn-outline-top-instalara:hover {
 	background-color: #00c2cb;
 	color: #fff;
+	border-bottom: 4px solid rgba(0,0,0,.125);
+}
+
+.card-header-instalara {
+	background-color: #00c2cb;
+	border-bottom: 2px solid rgba(0,0,0,.125);
+	color: #fff;
+	padding: 20px 15px;
+}
+
+.ButtonRegister{
+	background-color: #00c2cb;
+	color: #fff;
+	border-bottom: 4px solid rgba(0,0,0,.125);
+}
+
+.ButtonRegister:hover {
+	background-color: #01A8B0;
+}
+
+.Link,
+.Link:hover {
+	color: #01A8B0;
 }
