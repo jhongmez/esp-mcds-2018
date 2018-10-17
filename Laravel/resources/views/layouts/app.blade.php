@@ -19,6 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/all.min.css') }}" rel="stylesheet">
 
 </head>
 <body>
@@ -88,5 +89,6 @@
             &copy; Todos los derechos reservados {{ date('Y') }}
         </footer>
     </div>
+    <script src="{{ asset('js/all.min.js') }}"></script>
 </body>
 </html>

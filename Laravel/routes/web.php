@@ -18,3 +18,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Ruta para agregar la foto
+Route::get('add', 'PhotoController@create')->name('add-photo');
+//Ruta para guardar la foto
+Route::post('save','PhotoController@save')->name('save-photo');
+

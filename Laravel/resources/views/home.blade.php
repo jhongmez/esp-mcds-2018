@@ -3,20 +3,20 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+        <div class="col-md-6">
+            <a href="{{ url('add')}}" class="btn ButtonRegister mb-4">
+                <i class="fas fa-camera-retro"></i> Subir foto
+            </a>
+            {{-- Extraeremos los campos del modelo photos --}}
+            @forelse($photos as $photo)
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
+            @empty
+                <div class="card">
+                    <div class="card-body">
+                        <p class="text-center">Aún no tienes fotos</p>
+                    </div>
                 </div>
-            </div>
+            @endforelse
         </div>
     </div>
 </div>
